@@ -11,7 +11,7 @@ const App = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.get(`https://weather-app-divyaraj.herokuapp.com/temp?city=${city}`).then(res=>{
-            console.log(res);
+            // console.log(res);
             setData(res.data);
             res.data.cod === '404' && setNotFound(res.data.message);
         }).catch(e=>console.log(e.message));
