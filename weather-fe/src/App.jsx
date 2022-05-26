@@ -10,7 +10,7 @@ const App = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.get(`http://localhost:8000/temp?city=${city}`).then(res=>{
+        axios.get(`https://weather-app-divyaraj.herokuapp.com/temp?city=${city}`).then(res=>{
             console.log(res);
             setData(res.data);
             res.data.cod === '404' && setNotFound(res.data.message);
@@ -23,7 +23,7 @@ const App = () => {
             <button type="submit">Send</button>
             <button type="reset" onClick={()=>{
                 setCity(null);
-                setData(null);
+                // setData(null);
                 setNotFound(null)
                 }}>Clear</button>
             </form>
